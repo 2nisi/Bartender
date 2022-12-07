@@ -1,0 +1,78 @@
+<html>
+    <head>
+
+    	<base target="_top">
+        
+        <!-- Compiled and minified Materialize-CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import Custom CSS-->
+        <link rel="stylesheet" href="/staticFiles/page.css">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Buttons</title>
+
+    </head>
+
+    <body>
+        <div class="container" style="width: 80%">
+            <div class="row">
+                <div class="col s7">
+                    <form action="/" method="post" role="form">
+                        <div class="divider"></div>
+                        <div class="section">
+                            {% for button in buttons %}
+                                <button class="waves-effect waves-light btn-large btn-extra_large" type="submit" name="{{ button.command }}" value="{{ button.text }}">{{ button.text }}
+                                   <!-- <i class="material-icons right">send</i> -->
+                                </button><br/>
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+                <div class="col s5">
+                    <img class="responsive-img" style="margin-top: 30px; border-radius: 25px" src="/staticFiles/coctail.jpg">
+                    
+                    <form action="#">
+                        <p class="range-field">
+                          <input type="range" id="test5" min="0" max="100" />
+                        </p>
+                      </form>
+                    
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Place an empty glass for the bartender to fill.</h4>
+                            <p>Make sure that there is an empty glass at the dedicated position before continuing the request.</p>
+                            <div class="preloader-wrapper big active">
+                                <div class="spinner-layer spinner-blue-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div><div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div><div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fill the glass</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+    <!-- Compiled and minified Materialize-CSS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Linking local JavaScript file -->
+    <script src="{{url_for('static', filename='home.js')}}"></script>
+
+    </body>
+</html>
