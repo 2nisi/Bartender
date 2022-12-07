@@ -21,4 +21,5 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Modal.init(elems);
     findOperatingSytem();
     console.log(OSName);
+    
   });

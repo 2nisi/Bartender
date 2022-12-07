@@ -20,7 +20,7 @@ def index():
         #rospy.ServiceProxy('SwitchController', command)
     buttons = [
         {
-            'text': 'Go to Starting Position',
+            'text': 'Gin Tonic',
             'command': 'home_pose',
         },
         {
@@ -43,4 +43,4 @@ def index():
     return render_template('main.html', buttons = buttons)
 
 if __name__ == '__main__':
-    app.run(host= '192.168.1.22')
+    app.run(host= '10.6.152.117')

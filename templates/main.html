@@ -13,57 +13,43 @@
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <title>Buttons</title>
+        <title>DynaArm mini Bar</title>
 
     </head>
 
     <body>
-        <div class="container" style="width: 80%">
-            <div class="row">
-                <div class="col s7">
-                    <form action="/" method="post" role="form">
-                        <div class="divider"></div>
-                        <div class="section">
+        <div class="container" style="width: 70%">
+            <div class = "backgroundImage">
+                <div class="row">
+                    <div class="col s7">
+                        <form action="/" method="post" role="form">
                             {% for button in buttons %}
-                                <button class="waves-effect waves-light btn-large btn-extra_large" type="submit" name="{{ button.command }}" value="{{ button.text }}">{{ button.text }}
-                                   <!-- <i class="material-icons right">send</i> -->
-                                </button><br/>
-                            {% endfor %}
-                        </div>
-                    </form>
-                </div>
-                <div class="col s5">
-                    <img class="responsive-img" style="margin-top: 30px; border-radius: 25px" src="/staticFiles/coctail.jpg">
-                    
-                    <form action="#">
-                        <p class="range-field">
-                          <input type="range" id="test5" min="0" max="100" />
-                        </p>
-                      </form>
-                    
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn-large btn-extra_large modal-trigger flow-text" href="#{{ button.text }}">{{ button.text }}</a>
 
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4>Place an empty glass for the bartender to fill.</h4>
-                            <p>Make sure that there is an empty glass at the dedicated position before continuing the request.</p>
-                            <div class="preloader-wrapper big active">
-                                <div class="spinner-layer spinner-blue-only">
-                                    <div class="circle-clipper left">
-                                        <div class="circle"></div>
-                                    </div><div class="gap-patch">
-                                        <div class="circle"></div>
-                                    </div><div class="circle-clipper right">
-                                        <div class="circle"></div>
-                                    </div>
+                            <!-- Modal Structure -->
+                            <div id="{{ button.text }}" class="modal" style="border-radius: 25px;">
+                                <div class="modal-content">
+                                    <div class="row" style="margin-bottom: 0px;">
+                                        <div class="col s9">
+                                            <blockquote style="vertical-align: middle;">
+                                                <h5>An <u>empty glass</u> is properly Placed.</h5>
+                                            </blockquote>
+                                            
+                                        </div>
+                                        <div class="col s3">
+                                            <button class="waves-effect waves-light btn-large btn-modal" type="submit" name="{{ button.command }}" value="{{ button.text }}">Order</button>
+                                        </div>
+                                    </div>                                                                       
                                 </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fill the glass</a>
-                        </div>
+                            </div> <!--END of Modal Structure-->
+                                    {% endfor %}
+                        </form>
+                    </div>
+                    <div class="col s5">
+                        <!-- <img class="responsive-img" style="margin-top: 30px; border-radius: 25px" src="/staticFiles/coctail.jpg"> -->
+                        
+                        
                     </div>
                 </div>
             </div>  
