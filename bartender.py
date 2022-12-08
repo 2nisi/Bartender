@@ -20,25 +20,25 @@ def index():
         #rospy.ServiceProxy('SwitchController', command)
     buttons = [
         {
-            'text': 'Gin Tonic',
-            'command': 'home_pose',
+            'text': 'Gin & Tonic',
+            'command': 'gin_tonic',
         },
         {
-            'text': 'Sparkling Mint-Lime Iced Tea',
-            'command': 'command_B',
+            'text': 'Gin & Matte',
+            'command': 'gin_matte',
         },
         {
-            'text': 'Raspberry Frost Sodas',
-            'command': 'command_C',
+            'text': 'Vodka & Matte',
+            'command': 'vodka_matte',
         },
         {
-            'text': 'Pineapple Ginger Sparkler',
-            'command': 'command_D',
+            'text': 'Vodka & Cola',
+            'command': 'vodka_cola',
         },
         {
-            'text': 'Sparkling Pear Punch',
-            'command': 'command_E',
-        }       
+            'text': 'Rum & Cola',
+            'command': 'rum_cola',
+        }
     ]
     return render_template('main.html', buttons = buttons)
 

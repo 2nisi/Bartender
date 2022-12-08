@@ -22,6 +22,9 @@
             <div class = "backgroundImage">
                 <div class="row">
                     <div class="col s7">
+                        <div class="title-text">
+                            <h5>Choose a drink from the ones below and let the DynaArm serve you!</h5>
+                        </div>
                         <form action="/" method="post" role="form">
                             {% for button in buttons %}
                             <!-- Modal Trigger -->
@@ -33,18 +36,19 @@
                                     <div class="row" style="margin-bottom: 0px;">
                                         <div class="col s9">
                                             <blockquote style="vertical-align: middle;">
-                                                <h5>An <u>empty glass</u> is properly Placed.</h5>
+                                                <h5> Is an <u>empty glass</u> properly Placed?<i class="material-icons left" style="font-size:120% color:orangered important;">warning</i></h5>
                                             </blockquote>
                                             
                                         </div>
                                         <div class="col s3">
-                                            <button class="waves-effect waves-light btn-large btn-modal" type="submit" name="{{ button.command }}" value="{{ button.text }}">Order</button>
+                                            <button class="waves-effect waves-light btn-large btn-modal" type="submit" name="{{ button.command }}" value="{{ button.text }}">Order<i class="material-icons right" style="font-size:120%">local_bar</i></button>
                                         </div>
                                     </div>                                                                       
                                 </div>
                             </div> <!--END of Modal Structure-->
                                     {% endfor %}
                         </form>
+                        <div style="margin-top:20; margin-bottom:20; padding:20 20 20 20px;"></div>
                     </div>
                     <div class="col s5">
                         <!-- <img class="responsive-img" style="margin-top: 30px; border-radius: 25px" src="/staticFiles/coctail.jpg"> -->

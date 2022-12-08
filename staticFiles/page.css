@@ -4,20 +4,20 @@
 /* Define a new larger Button */
 .btn-extra_large{
   height:75px;
-  line-height:normal;
-  font-size:150%;
-  padding:20 20px;
+  font-size:250%;
+  padding:10 10px;
+  padding-left: 20px;
   width: 85%;
-  border-radius: 25px;
+  border-radius: 20px;
   vertical-align: middle;
   text-align: left;
 
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   margin-left: 40px;
-  margin-right: 20px;
-  margin-top: 30px;
+  margin-right: 30px;
+  margin-top: 5px;
 
-  background-color:#0666f4e0;   
+  background-color:#0666f4f2;   
 }  
 
 /* Define Modal Button */
@@ -31,7 +31,7 @@
   vertical-align: middle;
   text-align: center;
 
-  background-color:#0666f4e0;   
+  background-color:#0666f4f2;   
 }  
 
 
@@ -39,7 +39,28 @@
 .backgroundImage {
     background-image: url("/staticFiles/background.jpg");
     background-repeat: no-repeat;
-    height: 100%;
+    height: fill;
     background-size: 100%;
-    border-radius: 25px;
+    border-radius: 5px;
 }
+
+/* Define Title text Style */
+.title-text{
+  font-weight: bold;
+  color: white;
+  background-color:#17381fa3;
+  vertical-align: middle;
+  text-align: left;
+
+  padding:10 10px;
+  padding-left: 20px;
+  width: 85%;
+  border-radius: 5px;
+
+  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+  margin-right: 30px;
+  
+   
+} 
