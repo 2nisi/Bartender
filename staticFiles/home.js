@@ -19,7 +19,17 @@ function findOperatingSytem() {
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
+
     findOperatingSytem();
-    console.log(OSName);
+    console.log(OSName);  
     
   });
+
+
+var slide = document.getElementById('alchoholStrength');
+
+slide.onchange = function() {
+
+      document.getElementById("drinkType").name = document.getElementById("drinkType").name + " " + document.getElementById("alchoholStrength").value;
+      console.log(document.getElementById("alchoholStrength").value);
+};

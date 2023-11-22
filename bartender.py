@@ -38,9 +38,9 @@ def index():
         {
             'text': 'Rum & Cola',
             'command': 'rum_cola',
-        }
+        },
     ]
     return render_template('main.html', buttons = buttons)
 
 if __name__ == '__main__':
-    app.run(host= '10.6.152.117')
+    app.run(host= '0.0.0.0')

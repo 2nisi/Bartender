@@ -27,6 +27,7 @@
                         </div>
                         <form action="/" method="post" role="form">
                             {% for button in buttons %}
+                            
                             <!-- Modal Trigger -->
                             <a class="waves-effect waves-light btn-large btn-extra_large modal-trigger flow-text" href="#{{ button.text }}">{{ button.text }}</a>
 
@@ -36,13 +37,21 @@
                                     <div class="row" style="margin-bottom: 0px;">
                                         <div class="col s9">
                                             <blockquote style="vertical-align: middle;">
-                                                <h5> Is an <u>empty glass</u> properly Placed?<i class="material-icons left" style="font-size:120% color:orangered important;">warning</i></h5>
+                                                <h5> Drink strength selection <u><i>medium 27%<i></u></h5>
                                             </blockquote>
-                                            
+                                            <form action="#">
+                                                <p class="range-field">
+                                                    <input id="alchoholStrength" type="range" min="25" max="35" step="2" value="27">
+                                                </p>
+                                            </form>   
                                         </div>
                                         <div class="col s3">
-                                            <button class="waves-effect waves-light btn-large btn-modal" type="submit" name="{{ button.command }}" value="{{ button.text }}">Order<i class="material-icons right" style="font-size:120%">local_bar</i></button>
+                                            <button id="drinkType" class="waves-effect waves-light btn-large btn-modal" type="submit" name="{{ button.command }}" value="{{ button.text }}">Order<i class="material-icons right" style="font-size:120%">local_bar</i></button>
                                         </div>
+                                    </div>
+                                    
+                                    <div class="row ">
+                                        <div id="test-slider"></div>
                                     </div>                                                                       
                                 </div>
                             </div> <!--END of Modal Structure-->
@@ -63,6 +72,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Linking local JavaScript file -->
     <script src="{{url_for('static', filename='home.js')}}"></script>
-
     </body>
 </html>
