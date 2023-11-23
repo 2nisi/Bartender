@@ -30,6 +30,6 @@ var slide = document.getElementById('alchoholStrength');
 
 slide.onchange = function() {
 
-      document.getElementById("drinkType").name = document.getElementById("drinkType").name + " " + document.getElementById("alchoholStrength").value;
+      document.getElementById("drinkType").name = document.getElementById("drinkType").name + ";" + document.getElementById("alchoholStrength").value;
       console.log(document.getElementById("alchoholStrength").value);
 };
