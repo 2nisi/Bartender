@@ -15,10 +15,10 @@ def index():
     if request.method == 'POST':
         separateStrings = next(iter(request.form.keys())).split(';')
         print(separateStrings)
-        rospy.set_param('/barman/drink_strength', int(separateStrings[1])/100.0)
-        motion_state_goal = GoToMotionStateActionGoal()
-        motion_state_goal.goal.goal_motion_state = separateStrings[0]
-        go_to_motion_state_publisher.publish(motion_state_goal)
+        # rospy.set_param('/barman/drink_strength', int(separateStrings[1])/100.0)
+        # motion_state_goal = GoToMotionStateActionGoal()
+        # motion_state_goal.goal.goal_motion_state = separateStrings[0]
+        # go_to_motion_state_publisher.publish(motion_state_goal)
     buttons = [
         {
             'text': 'Gin & Tonic',
