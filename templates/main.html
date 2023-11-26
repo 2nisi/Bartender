@@ -23,39 +23,47 @@
                 <div class="row">
                     <div class="col s7">
                         <div class="title-text">
-                            <h5>Choose a drink from the ones below and let the DynaArm serve you!</h5>
+                            <h5>Choose a drink and let the DynaArm serve you!</h5>
                         </div>
-                        <form action="/" method="post" role="form">
+                        <form id="order_form" action="/" method="post" role="form">
                             {% for button in buttons %}
                             
                             <!-- Modal Trigger -->
-                            <a class="waves-effect waves-light btn-large btn-extra_large modal-trigger flow-text" href="#{{ button.text }}">{{ button.text }}</a>
+                            <a class="waves-effect waves-light btn-large btn-extra_large modal-trigger flow-text" href="#customize_drink" name="{{button.command}}" onclick="update_drink_selection(this.name)">{{ button.text }}</a>
+                            {% endfor %}
 
                             <!-- Modal Structure -->
-                            <div id="{{ button.text }}" class="modal" style="border-radius: 25px;">
+                            <div id="customize_drink" class="modal" style="border-radius: 25px;">
                                 <div class="modal-content">
                                     <div class="row" style="margin-bottom: 0px;">
                                         <div class="col s9">
                                             <blockquote style="vertical-align: middle;">
-                                                <h5> Drink strength selection <u><i>medium 27%<i></u></h5>
-                                            </blockquote>
-                                            <form action="#">
-                                                <p class="range-field">
-                                                    <input id="alchoholStrength" type="range" min="25" max="35" step="2" value="27">
-                                                </p>
-                                            </form>   
+                                                <h5 id="strength_text"> Drink strength: <i>Medium<i></h5>
+                                            </blockquote>                                            
+                                            <div class="slider">                                                
+                                                <input id="alchoholStrength" type="range" min="0" max="100" value="60" id="fader" step="10">
+                                                <div class="col s12" style="padding-right: 0px; padding-left: 0px;">
+                                                    <div class="col s3" style="text-align: left;">
+                                                        <label id="lab_void">Void </label>
+                                                    </div>
+                                                    <div class="col s3" style="text-align: left;">
+                                                        <label id="lab_soft">Soft </label>
+                                                    </div>
+                                                    <div class="col s3" style="text-align: center;">
+                                                        <label id="lab_medium">Medium </label>
+                                                    </div>
+                                                    <div class="col s3" style="text-align: right;">
+                                                        <label id="lab_strong">Strong </label>
+                                                    </div>
+                                                </div>   
+                                            </div>                                                
                                         </div>
                                         <div class="col s3">
-                                            <button id="drinkType" class="waves-effect waves-light btn-large btn-modal" type="submit" name="{{ button.command }}" value="{{ button.text }}">Order<i class="material-icons right" style="font-size:120%">local_bar</i></button>
+                                            <button id="submit_button" class="waves-effect waves-light btn-large btn-modal">Order<i class="material-icons right" style="font-size:120%">local_bar</i></button>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="row ">
-                                        <div id="test-slider"></div>
-                                    </div>                                                                       
+                                    </div>                                                                     
                                 </div>
                             </div> <!--END of Modal Structure-->
-                                    {% endfor %}
                         </form>
                         <div style="margin-top:20; margin-bottom:20; padding:20 20 20 20px;"></div>
                     </div>
