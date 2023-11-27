@@ -1,6 +1,6 @@
 //Global Variabels
 var OSName = "MacOS";
-
+var selected_drink = ""; // This variable holds the latest selected coctail type.
 
 
 //JavaScript functions of main page.
@@ -15,7 +15,7 @@ function findOperatingSytem() {
 }
 
 
-
+// Creating DOMContentLoader
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
@@ -26,15 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-var selected_drink = "";
+// Updating the global variable selected_drink with the latest choosen coctail.
 function update_drink_selection(selected_coctail){
     console.log(selected_coctail);
     selected_drink = selected_coctail;
 };
 
 
+// Updating the slider value and making it more visually appealing.
 const slider = document.getElementById('alchoholStrength');
-slider.oninput = function() {
+document.getElementById('alchoholStrength').oninput = function() {
 
     var alchohol_strength = slider.value;
     var alchohol_strength_text = "";
@@ -57,8 +58,8 @@ slider.oninput = function() {
 
 window.onload = function (){
 
+    // This is being activated once the form is being submited. Here the coctail type and alchohol content are defined.
     document.getElementById("order_form").onsubmit = function(){
-
         var order_drink = document.getElementById("submit_button");
         order_drink.name = selected_drink + ";" + slider.value; // This is the text command that is send over Post method to ROS server
     };
