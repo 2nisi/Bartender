@@ -65,4 +65,3 @@ window.onload = function (){
     };
 
 };
-
