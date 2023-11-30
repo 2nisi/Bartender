@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 from flask import Flask, request, render_template
-from flask_socketio import SocketIO
 import rospy
 import time
 
@@ -58,7 +57,19 @@ def index():
             separateStrings = next(iter(request.form.keys())).split(';')
             print(separateStrings)
             dynaarmState = "busy"
-            rospy.set_param('/barman/drink_strength', int(separateStrings[1])/100.0)
+            
+            # Converting requested drink strength to the alcohol to soda ratio
+            if separateStrings[1] == 'Void':
+                alchohol_ratio = 0
+            elif separateStrings[1] == 'Soft':
+                alchohol_ratio = 1/11
+            elif separateStrings[1] <= 'Medium':
+                alchohol_ratio = 1/8
+            elif separateStrings[1] <= 'Strong':
+                alchohol_ratio = 1/5
+            
+            print(alchohol_ratio)
+            rospy.set_param('/barman/drink_strength', alchohol_ratio)
             motion_state_goal = GoToMotionStateActionGoal()
             motion_state_goal.goal.goal_motion_state = separateStrings[0]
             go_to_motion_state_publisher.publish(motion_state_goal)

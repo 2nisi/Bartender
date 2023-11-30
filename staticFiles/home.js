@@ -32,13 +32,13 @@ function update_drink_selection(selected_coctail){
     selected_drink = selected_coctail;
 };
 
-
+var alchohol_strength_text = "";
 // Updating the slider value and making it more visually appealing.
 const slider = document.getElementById('alchoholStrength');
 document.getElementById('alchoholStrength').oninput = function() {
 
     var alchohol_strength = slider.value;
-    var alchohol_strength_text = "";
+    
 
     // Reseting all fonts to default
     document.getElementById("lab_void").style.fontSize = "0.8rem";
@@ -61,7 +61,7 @@ window.onload = function (){
     // This is being activated once the form is being submited. Here the coctail type and alchohol content are defined.
     document.getElementById("order_form").onsubmit = function(){
         var order_drink = document.getElementById("submit_button");
-        order_drink.name = selected_drink + ";" + slider.value; // This is the text command that is send over Post method to ROS server
+        order_drink.name = selected_drink + ";" + alchohol_strength_text; // This is the text command that is send over Post method to ROS server
     };
 
 };
